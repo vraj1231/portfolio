@@ -194,14 +194,6 @@ export const projects: Project[] = [
     impactMetric: '0 Data Exposures',
   },
   {
-    title: 'Illegal Dumping Action Detection',
-    description: 'End-to-end CV pipeline for detecting illegal dumping in smart city camera feeds. Multi-object tracking with Deep SORT + OCR for license plate identification.',
-    stack: ['YOLOv5', 'PyTorch', 'Deep SORT', 'OCR', 'AWS EC2', 'Streamlit'],
-    impact: '54% mAP improvement over baseline',
-    impactMetric: '+54% mAP',
-    link: 'https://www.mdpi.com/2624-6511/7/4/88',
-  },
-  {
     title: 'Driver Drowsiness Detection',
     description: 'Real-time drowsiness detection using facial landmark extraction (eye ratio, mouth ratio, head tilt, blinks/min) and sequential deep learning models.',
     stack: ['Python', 'OpenCV', 'LSTM', 'GRU', 'KerasTuner'],
