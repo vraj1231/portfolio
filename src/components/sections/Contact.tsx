@@ -1,8 +1,10 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, Suspense } from 'react'
 import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
+import { Canvas } from '@react-three/fiber'
 import { links } from '../../data/content'
 import { SectionWrapper } from '../layout/SectionWrapper'
+import { FloatingGeo } from '../three/FloatingGeo'
 
 const SOCIAL_LINKS = [
   { label: 'LinkedIn', href: links.linkedin },
@@ -61,6 +63,15 @@ export function Contact() {
         >
           — Contact —
         </motion.h2>
+
+        {/* 3D floating geo */}
+        <div className="h-40 w-full pointer-events-none mb-2">
+          <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+            <Suspense fallback={null}>
+              <FloatingGeo />
+            </Suspense>
+          </Canvas>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
