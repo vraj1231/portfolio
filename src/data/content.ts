@@ -20,6 +20,22 @@ export interface Project {
   stack: string[]
   impact: string
   impactMetric?: string
+  link?: string
+}
+
+export interface Education {
+  school: string
+  degree: string
+  field: string
+  period: string
+  gpa: string
+}
+
+export interface Publication {
+  title: string
+  publisher: string
+  date: string
+  link?: string
 }
 
 export interface Links {
@@ -63,11 +79,67 @@ export const experience: ExperienceEntry[] = [
       'Built a POC for Open-Python enabling clients to run custom code on curated datasets within privacy constraints—leveraging AI agents to enforce data governance without exposing row-level data.',
       'Automated weekly client deliverables using Snowflake and Slack alerting, ensuring zero manual intervention and real-time status updates.',
       'Worked extensively with Snowflake Data Clean Rooms and AMC Cloud, collaborating with clients on audience insights, identity matching, modeling, and measurement solutions.',
+      'Produced pre-recorded onboarding videos for Snowflake native apps to enhance client self-service and reduce support cycles.',
     ],
     skills: ['Snowflake', 'Apache Iceberg', 'Python', 'AI Agents', 'AMC Cloud'],
     metrics: [
       { label: 'Turnaround', value: '2 Weeks → 15 Min' },
     ],
+  },
+  {
+    title: 'Machine Learning Engineer',
+    company: 'Home Heroes',
+    period: 'Aug 2022 – Dec 2022',
+    location: 'Roseville, California',
+    bullets: [
+      'Designed a robust platform for ML application lifecycle management and optimizing ML models at scale.',
+      'Created an automated monitoring system using Flask, Google Cloud Run, and Google Cloud Storage to analyze data in real time.',
+      'Developed a deep learning model to detect and classify solar panel installations using PyTorch-YOLOv5, achieving 78% accuracy.',
+      'Supported business decisions with model insights and targeted marketing campaigns.',
+    ],
+    skills: ['PyTorch', 'YOLOv5', 'Flask', 'Google Cloud Run', 'Computer Vision'],
+    metrics: [
+      { label: 'Model Accuracy', value: '78%' },
+    ],
+  },
+  {
+    title: 'Graduate Research Scientist',
+    company: 'UTHealth Houston',
+    period: 'May 2022 – Dec 2022',
+    location: 'Texas, United States',
+    bullets: [
+      'Collected and preprocessed CTA brain images using image registration and the FreeSurfer library.',
+      'Applied coordinate templates to normalize stroke image datasets as part of the data cleaning pipeline.',
+      'Interpreted and analyzed imaging data using scientific and statistical techniques.',
+      'Oversaw research staff on technical procedures and equipment operations.',
+    ],
+    skills: ['FreeSurfer', 'Medical Imaging', 'Python', 'Data Analysis'],
+  },
+  {
+    title: 'Teaching Assistant, Intro to Deep Learning',
+    company: 'California State University, Fresno',
+    period: 'Dec 2018 – Jan 2020',
+    location: 'Fresno, California',
+    bullets: [
+      'Covered topics from basic neural networks to CNNs, RNNs, NLP, GANs, and Transformers.',
+      'Assisted with supervision of 60 students, providing guidance across coursework and programming projects.',
+      'Used positive reinforcement techniques to engage students and promote higher-level thinking.',
+      'Delivered clear, effective feedback to improve the quality and efficiency of student-written programs.',
+    ],
+    skills: ['C++', 'Deep Learning', 'PyTorch', 'NLP'],
+  },
+  {
+    title: 'Event Manager',
+    company: 'Fresno State — Dept. of Media, Communications & Journalism',
+    period: 'Nov 2018 – Oct 2020',
+    location: 'Fresno, California',
+    bullets: [
+      'Maintained and updated database of volunteers, events, and donors.',
+      'Coordinated ticket sales and tracked attendee records.',
+      'Planned event advertising including media outlets, graphics, and communications.',
+      'Supported the marketing team with ideas and administrative coordination.',
+    ],
+    skills: ['Social Media', 'Event Management', 'Database Management'],
   },
 ]
 
@@ -75,17 +147,17 @@ export const skills: SkillCategory[] = [
   {
     name: 'Data Engineering',
     color: '#00d4ff',
-    skills: ['Snowflake', 'Apache Iceberg', 'dbt', 'SQL', 'ETL/ELT'],
+    skills: ['Snowflake', 'Apache Iceberg', 'dbt', 'SQL', 'ETL/ELT', 'Data Clean Rooms'],
   },
   {
-    name: 'AI / LLM',
+    name: 'AI / ML',
     color: '#a855f7',
-    skills: ['Python', 'LangChain', 'RAG', 'Semantic Search', 'AI Agents'],
+    skills: ['Python', 'LangChain', 'RAG', 'Semantic Search', 'AI Agents', 'PyTorch', 'YOLOv5', 'LSTM', 'Computer Vision', 'NLP'],
   },
   {
     name: 'Cloud & Platforms',
     color: '#3fb950',
-    skills: ['AWS', 'Snowflake Clean Rooms', 'AMC Cloud', 'Slack API'],
+    skills: ['AWS', 'Google Cloud', 'Snowflake Clean Rooms', 'AMC Cloud', 'Slack API', 'Flask', 'Streamlit'],
   },
 ]
 
@@ -110,6 +182,47 @@ export const projects: Project[] = [
     stack: ['Python', 'AI Agents', 'Snowflake'],
     impact: 'Privacy-preserving self-service analytics',
     impactMetric: '0 Data Exposures',
+  },
+  {
+    title: 'Illegal Dumping Action Detection',
+    description: 'End-to-end CV pipeline for detecting illegal dumping in smart city camera feeds. Multi-object tracking with Deep SORT + OCR for license plate identification.',
+    stack: ['YOLOv5', 'PyTorch', 'Deep SORT', 'OCR', 'AWS EC2', 'Streamlit'],
+    impact: '54% mAP improvement over baseline',
+    impactMetric: '+54% mAP',
+    link: 'https://www.mdpi.com/2624-6511/7/4/88',
+  },
+  {
+    title: 'Driver Drowsiness Detection',
+    description: 'Real-time drowsiness detection using facial landmark extraction (eye ratio, mouth ratio, head tilt, blinks/min) and sequential deep learning models.',
+    stack: ['Python', 'OpenCV', 'LSTM', 'GRU', 'KerasTuner'],
+    impact: '18% accuracy improvement over baseline',
+    impactMetric: '73% Accuracy',
+  },
+]
+
+export const education: Education[] = [
+  {
+    school: 'San José State University',
+    degree: "Master's Degree",
+    field: 'Data Science',
+    period: 'Jan 2021 – Dec 2022',
+    gpa: '3.8',
+  },
+  {
+    school: 'California State University, Fresno',
+    degree: 'Bachelor of Science',
+    field: 'Computer Science',
+    period: '2017 – Dec 2020',
+    gpa: '3.6',
+  },
+]
+
+export const publications: Publication[] = [
+  {
+    title: 'Smart City Community Watch — Camera-Based Community Watch for Traffic and Illegal Dumping',
+    publisher: 'MDPI',
+    date: 'Aug 6, 2024',
+    link: 'https://www.mdpi.com/2624-6511/7/4/88',
   },
 ]
 

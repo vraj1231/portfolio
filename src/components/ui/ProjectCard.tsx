@@ -66,6 +66,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </span>
         ))}
       </div>
+
+      {/* Link */}
+      {project.link && (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-cyan text-xs font-mono hover:underline self-start"
+        >
+          View Publication →
+        </a>
+      )}
     </div>
   )
 }
