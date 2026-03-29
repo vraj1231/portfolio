@@ -30,5 +30,6 @@ describe('Contact', () => {
     expect(screen.getByText('LinkedIn')).toBeInTheDocument()
     expect(screen.getByText('GitHub')).toBeInTheDocument()
     expect(screen.getByText('Medium')).toBeInTheDocument()
+    expect(screen.getByText('Email')).toBeInTheDocument()
   })
 })
