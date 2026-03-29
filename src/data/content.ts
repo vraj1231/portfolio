@@ -164,7 +164,7 @@ export const skills: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
-    title: 'Smart City Community Watch',
+    title: 'Illegal Dumping Action Detection',
     description: 'Published research: end-to-end CV pipeline detecting illegal dumping in smart city camera feeds. Multi-object tracking with Deep SORT + OCR for license plate identification. Deployed on AWS.',
     stack: ['YOLOv5', 'PyTorch', 'Deep SORT', 'OCR', 'AWS EC2', 'Streamlit'],
     impact: '72% mAP · Published on MDPI',
@@ -173,14 +173,14 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    title: 'Conversational AI Platform',
+    title: 'AI Chatbot for Data Insights',
     description: 'Semantic AI model integrated with real financial institution data, powering chatbots that surface actionable insights and dynamic visualizations — all with built-in data privacy.',
     stack: ['Python', 'LangChain', 'Snowflake', 'LLMs'],
     impact: 'Production at Affinity Solutions',
     impactMetric: 'Live in Production',
   },
   {
-    title: 'Client Data Pipeline Acceleration',
+    title: 'Ads Measurement Application',
     description: 'Redesigned data processing workflows to slash client data turnaround time by 98% — from two weeks down to fifteen minutes.',
     stack: ['Snowflake', 'Python', 'SQL'],
     impact: '98% time reduction',
