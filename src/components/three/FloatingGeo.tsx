@@ -29,7 +29,7 @@ export function FloatingGeo() {
       {/* Outer wireframe icosahedron */}
       <mesh ref={outerRef}>
         <icosahedronGeometry args={[1.4, 1]} />
-        <meshStandardMaterial color="#00d4ff" wireframe transparent opacity={0.35} />
+        <meshStandardMaterial color="#00d4ff" wireframe transparent opacity={0.85} />
       </mesh>
 
       {/* Inner solid icosahedron */}
@@ -38,20 +38,20 @@ export function FloatingGeo() {
         <meshStandardMaterial
           color="#a855f7"
           transparent
-          opacity={0.18}
+          opacity={0.55}
           side={THREE.DoubleSide}
         />
       </mesh>
 
       {/* Orbiting ring */}
       <mesh ref={ringRef} rotation={[Math.PI / 3, 0, 0]}>
-        <torusGeometry args={[1.9, 0.018, 8, 80]} />
-        <meshStandardMaterial color="#a855f7" transparent opacity={0.45} />
+        <torusGeometry args={[1.9, 0.025, 8, 80]} />
+        <meshStandardMaterial color="#a855f7" transparent opacity={0.90} />
       </mesh>
 
-      <pointLight position={[3, 3, 3]} color="#00d4ff" intensity={3} />
-      <pointLight position={[-3, -2, -2]} color="#a855f7" intensity={2} />
-      <ambientLight intensity={0.15} />
+      <pointLight position={[3, 3, 3]} color="#00d4ff" intensity={8} />
+      <pointLight position={[-3, -2, -2]} color="#a855f7" intensity={6} />
+      <ambientLight intensity={0.6} />
     </group>
   )
 }
