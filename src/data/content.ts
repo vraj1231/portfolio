@@ -21,6 +21,7 @@ export interface Project {
   impact: string
   impactMetric?: string
   link?: string
+  featured?: boolean
 }
 
 export interface Education {
@@ -163,22 +164,31 @@ export const skills: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
-    title: 'Semantic AI Chatbot',
-    description: 'LLM-powered chatbot connected to real-world data, delivering actionable insights and dynamic visualizations with full data privacy.',
+    title: 'Smart City Community Watch',
+    description: 'Published research: end-to-end CV pipeline detecting illegal dumping in smart city camera feeds. Multi-object tracking with Deep SORT + OCR for license plate identification. Deployed on AWS.',
+    stack: ['YOLOv5', 'PyTorch', 'Deep SORT', 'OCR', 'AWS EC2', 'Streamlit'],
+    impact: '72% mAP · Published on MDPI',
+    impactMetric: 'MDPI Published',
+    link: 'https://www.mdpi.com/2624-6511/7/4/88',
+    featured: true,
+  },
+  {
+    title: 'Conversational AI Platform',
+    description: 'Semantic AI model integrated with real financial institution data, powering chatbots that surface actionable insights and dynamic visualizations — all with built-in data privacy.',
     stack: ['Python', 'LangChain', 'Snowflake', 'LLMs'],
     impact: 'Production at Affinity Solutions',
     impactMetric: 'Live in Production',
   },
   {
-    title: 'Measurement App Overhaul',
-    description: 'Redesigned data processing workflows to slash client data turnaround time by 98%, from two weeks to fifteen minutes.',
+    title: 'Client Data Pipeline Acceleration',
+    description: 'Redesigned data processing workflows to slash client data turnaround time by 98% — from two weeks down to fifteen minutes.',
     stack: ['Snowflake', 'Python', 'SQL'],
     impact: '98% time reduction',
     impactMetric: '2 Weeks → 15 Min',
   },
   {
-    title: 'Open-Python POC',
-    description: 'Privacy-preserving analytics platform letting clients run custom Python on curated datasets. AI agents enforce data governance without exposing row-level data.',
+    title: 'Privacy-First Analytics Engine',
+    description: 'Open-Python platform letting clients run custom code securely on curated datasets. AI agents enforce data governance at runtime — zero row-level data exposure.',
     stack: ['Python', 'AI Agents', 'Snowflake'],
     impact: 'Privacy-preserving self-service analytics',
     impactMetric: '0 Data Exposures',

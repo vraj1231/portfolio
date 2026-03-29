@@ -3,10 +3,10 @@ import { describe, it, expect } from 'vitest'
 import { Projects } from './Projects'
 
 describe('Projects', () => {
-  it('renders all three project titles', () => {
+  it('renders project titles', () => {
     render(<Projects />)
-    expect(screen.getByText('Semantic AI Chatbot')).toBeInTheDocument()
-    expect(screen.getByText('Measurement App Overhaul')).toBeInTheDocument()
-    expect(screen.getByText('Open-Python POC')).toBeInTheDocument()
+    expect(screen.getByText('Smart City Community Watch')).toBeInTheDocument()
+    expect(screen.getByText('Conversational AI Platform')).toBeInTheDocument()
+    expect(screen.getByText('Privacy-First Analytics Engine')).toBeInTheDocument()
   })
 })

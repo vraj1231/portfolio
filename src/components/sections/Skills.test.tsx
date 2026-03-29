@@ -20,7 +20,7 @@ describe('Skills', () => {
   it('renders all three category names', () => {
     render(<Skills />)
     expect(screen.getByText('Data Engineering')).toBeInTheDocument()
-    expect(screen.getByText('AI / LLM')).toBeInTheDocument()
+    expect(screen.getByText('AI / ML')).toBeInTheDocument()
     expect(screen.getByText('Cloud & Platforms')).toBeInTheDocument()
   })
 })

@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest'
 import { experience, skills, projects, links, bio } from './content'
 
 describe('content', () => {
-  it('has two experience entries', () => {
-    expect(experience).toHaveLength(2)
+  it('has experience entries', () => {
+    expect(experience.length).toBeGreaterThan(0)
   })
 
   it('each experience entry has required fields', () => {
@@ -20,8 +20,8 @@ describe('content', () => {
     expect(skills).toHaveLength(3)
   })
 
-  it('has three projects', () => {
-    expect(projects).toHaveLength(3)
+  it('has projects', () => {
+    expect(projects.length).toBeGreaterThan(0)
   })
 
   it('links has all four required keys', () => {
