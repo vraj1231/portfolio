@@ -87,7 +87,7 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    title: 'Machine Learning Engineer',
+    title: 'Machine Learning Engineer Intern, Computer Vision',
     company: 'Home Heroes',
     period: 'Aug 2022 – Dec 2022',
     location: 'Roseville, California',
@@ -147,17 +147,17 @@ export const skills: SkillCategory[] = [
   {
     name: 'Data Engineering',
     color: '#00d4ff',
-    skills: ['Snowflake', 'Apache Iceberg', 'dbt', 'SQL', 'ETL/ELT', 'Data Clean Rooms'],
+    skills: ['Snowflake', 'Apache Iceberg', 'dbt', 'SQL', 'ETL/ELT', 'Data Clean Rooms', 'Apache Spark', 'Kafka', 'Hadoop', 'AWS Redshift', 'MySQL', 'MongoDB'],
   },
   {
     name: 'AI / ML',
     color: '#a855f7',
-    skills: ['Python', 'LangChain', 'RAG', 'Semantic Search', 'AI Agents', 'PyTorch', 'YOLOv5', 'LSTM', 'Computer Vision', 'NLP'],
+    skills: ['Python', 'LangChain', 'RAG', 'Semantic Search', 'AI Agents', 'PyTorch', 'TensorFlow', 'YOLOv5', 'LSTM', 'Computer Vision', 'NLP', 'OpenCV'],
   },
   {
     name: 'Cloud & Platforms',
     color: '#3fb950',
-    skills: ['AWS', 'Google Cloud', 'Snowflake Clean Rooms', 'AMC Cloud', 'Slack API', 'Flask', 'Streamlit'],
+    skills: ['AWS', 'GCP', 'Kubernetes', 'Snowflake Clean Rooms', 'AMC Cloud', 'AWS Glue', 'Slack API', 'Flask', 'Streamlit', 'Tableau', 'JIRA'],
   },
 ]
 
@@ -198,21 +198,28 @@ export const projects: Project[] = [
     impact: '18% accuracy improvement over baseline',
     impactMetric: '73% Accuracy',
   },
+  {
+    title: 'Real-Time Hospital Bed Availability',
+    description: 'Live Kibana dashboard tracking hospital bed availability during the pandemic, ingesting Twitter data in real time via Amazon Kinesis for immediate public health visibility.',
+    stack: ['Amazon Kinesis', 'Kibana', 'Python', 'Twitter API', 'AWS'],
+    impact: 'Real-time pandemic resource monitoring',
+    impactMetric: 'Real-Time',
+  },
 ]
 
 export const education: Education[] = [
   {
     school: 'San José State University',
-    degree: "Master's Degree",
+    degree: 'Master of Science',
     field: 'Data Science',
     period: 'Jan 2021 – Dec 2022',
-    gpa: '3.8',
+    gpa: '3.6',
   },
   {
     school: 'California State University, Fresno',
     degree: 'Bachelor of Science',
     field: 'Computer Science',
-    period: '2017 – Dec 2020',
+    period: 'Jan 2017 – Dec 2020',
     gpa: '3.6',
   },
 ]
