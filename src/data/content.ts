@@ -244,8 +244,8 @@ export const links: Links = {
 
 export const bio: Bio = {
   name: 'Vraj Mistry',
-  title: 'Senior Data & AI Engineer',
+  title: 'Senior Data & Software Engineer',
   tagline: 'Building at the intersection of LLMs and data infrastructure.',
-  about: "I'm a Senior Data & Software Engineer at Affinity Solutions, where I design AI-powered data systems that turn raw data into actionable intelligence. I specialize in large language models, data pipelines, and cloud-native architectures — building things that are fast, private, and useful.",
+  about: "Senior Data & Software Engineer at Affinity Solutions. I spend most of my time building AI-powered data systems — the kind that go from raw, messy inputs to something a person can actually act on. LLMs, pipelines, cloud architecture. Fast and private, or it doesn't ship.",
   tags: ['Builder', 'Data-Driven', 'AI-First'],
 }
