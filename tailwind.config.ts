@@ -10,6 +10,7 @@ export default {
         cyan: '#00d4ff',
         purple: '#a855f7',
         muted: '#94a3b8',
+        text: '#e2e8f0',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
