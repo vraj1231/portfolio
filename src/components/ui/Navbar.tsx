@@ -45,7 +45,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-16 flex items-center justify-between h-16">
         <a href="#home" className="flex items-center">
-          <img src="/vm-logo.png" alt="VM" className="h-9 w-9 object-contain" style={{ filter: 'brightness(0) invert(1)' }} />
+          <img src={`${import.meta.env.BASE_URL}vm-logo.png`} alt="VM" className="h-10 w-10 object-contain" style={{ mixBlendMode: 'screen' }} />
         </a>
 
         {/* Desktop links */}

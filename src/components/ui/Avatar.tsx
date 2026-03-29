@@ -38,7 +38,7 @@ export function Avatar() {
         {/* Avatar image clipped to circle */}
         <g clipPath="url(#circleClip)">
           <image
-            href="/avatar.png"
+            href={`${import.meta.env.BASE_URL}avatar.png`}
             x="15" y="15" width="190" height="190"
             preserveAspectRatio="xMidYMid meet"
           />
