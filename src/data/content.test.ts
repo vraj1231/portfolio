@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { experience, skills, projects, links } from './content'
+import { experience, skills, projects, links, bio } from './content'
 
 describe('content', () => {
   it('has two experience entries', () => {
@@ -29,5 +29,10 @@ describe('content', () => {
     expect(links).toHaveProperty('github')
     expect(links).toHaveProperty('medium')
     expect(links).toHaveProperty('email')
+  })
+
+  it('bio has name and tagline', () => {
+    expect(bio.name).toBeTruthy()
+    expect(bio.tagline).toBeTruthy()
   })
 })

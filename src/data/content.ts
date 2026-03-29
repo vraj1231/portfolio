@@ -29,6 +29,14 @@ export interface Links {
   email: string
 }
 
+export interface Bio {
+  name: string
+  title: string
+  tagline: string
+  about: string
+  tags: string[]
+}
+
 export const experience: ExperienceEntry[] = [
   {
     title: 'Senior Data & Software Engineer I',
@@ -112,7 +120,7 @@ export const links: Links = {
   email: 'mistryvraj3198@gmail.com',
 }
 
-export const bio = {
+export const bio: Bio = {
   name: 'Vraj Mistry',
   title: 'Senior Data & AI Engineer',
   tagline: 'Building at the intersection of LLMs and data infrastructure.',
