@@ -12,10 +12,10 @@ interface Node {
 
 export function NeuralNet() {
   const groupRef = useRef<THREE.Group>(null)
+  const pointsRef = useRef<THREE.Points>(null)
   const mouseRef = useRef({ x: 0, y: 0 })
   const { size } = useThree()
 
-  // Determine node count: fewer on mobile for performance
   const NODE_COUNT = typeof window !== 'undefined' && window.innerWidth < 768 ? 40 : 80
 
   useEffect(() => {
@@ -44,6 +44,7 @@ export function NeuralNet() {
     }))
   , [NODE_COUNT])
 
+  // Static line geometry (initial connections — kept static for performance)
   const lineGeometry = useMemo(() => {
     const points: number[] = []
     for (let i = 0; i < nodes.length; i++) {
@@ -60,9 +61,25 @@ export function NeuralNet() {
     return geo
   }, [nodes])
 
-  const nodePositions = useMemo(() =>
-    nodes.map(n => n.position.toArray() as [number, number, number])
-  , [nodes])
+  // Points geometry for animated nodes
+  const pointsGeometry = useMemo(() => {
+    const geo = new THREE.BufferGeometry()
+    const positions = new Float32Array(NODE_COUNT * 3)
+    nodes.forEach((node, i) => {
+      positions[i * 3] = node.position.x
+      positions[i * 3 + 1] = node.position.y
+      positions[i * 3 + 2] = node.position.z
+    })
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+    return geo
+  }, [nodes, NODE_COUNT])
+
+  useEffect(() => {
+    return () => {
+      lineGeometry.dispose()
+      pointsGeometry.dispose()
+    }
+  }, [lineGeometry, pointsGeometry])
 
   useFrame((state) => {
     if (!groupRef.current) return
@@ -70,13 +87,18 @@ export function NeuralNet() {
     groupRef.current.rotation.y = t * 0.04 + mouseRef.current.x * 0.08
     groupRef.current.rotation.x = mouseRef.current.y * 0.04
 
-    // Animate nodes (bounce off bounds)
-    nodes.forEach(node => {
+    // Animate nodes and update Points geometry
+    const positions = pointsGeometry.attributes.position.array as Float32Array
+    nodes.forEach((node, i) => {
       node.position.add(node.velocity)
       if (Math.abs(node.position.x) > 7) node.velocity.x *= -1
       if (Math.abs(node.position.y) > 4.5) node.velocity.y *= -1
       if (Math.abs(node.position.z) > 3) node.velocity.z *= -1
+      positions[i * 3] = node.position.x
+      positions[i * 3 + 1] = node.position.y
+      positions[i * 3 + 2] = node.position.z
     })
+    pointsGeometry.attributes.position.needsUpdate = true
   })
 
   return (
@@ -84,12 +106,9 @@ export function NeuralNet() {
       <lineSegments geometry={lineGeometry}>
         <lineBasicMaterial color="#00d4ff" transparent opacity={0.12} />
       </lineSegments>
-      {nodePositions.map((pos, i) => (
-        <mesh key={i} position={pos}>
-          <sphereGeometry args={[0.04, 6, 6]} />
-          <meshBasicMaterial color={i % 5 === 0 ? '#a855f7' : '#00d4ff'} />
-        </mesh>
-      ))}
+      <points ref={pointsRef} geometry={pointsGeometry}>
+        <pointsMaterial color="#00d4ff" size={0.08} sizeAttenuation transparent opacity={0.9} />
+      </points>
       <ambientLight intensity={0.3} />
     </group>
   )
